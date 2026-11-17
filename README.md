@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PSO feature selection for breast cancer diagnosis: replication study
 
 Replication of Kazerani, *Improving Breast Cancer Diagnosis Accuracy by Particle Swarm Optimization
@@ -51,3 +52,6 @@ Parts of the code skeleton were drafted with a generative AI assistant (Claude);
 tested and is responsible for it. *(Fill in who did what.)*
 
 Educational project, not for clinical use. Data: UCI Machine Learning Repository.
+=======
+﻿# pso-feature-selection-breast-cancer
+>>>>>>> 95c46a22fa57ac53e13a705881d643d886b304dc
