@@ -1,0 +1,10 @@
+results_dir: results_smoke
+datasets: [coimbra]
+classifiers: [DT, LGR, KNN]
+seeds: [0, 1]
+n_jobs: 2
+preprocess: {fit_on: train, outliers: iqr, test_size: 0.2}
+drop_features: {wpbc: []}
+pso: {n_particles: 6, n_iter: 3, w: 0.9, c1: 1.0, c2: 2.0, vmax: 0.5}
+fitness: {alpha: 0.7, beta: 0.3, k: 4}
+clf_params: {}

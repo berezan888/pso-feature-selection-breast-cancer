@@ -1,0 +1,35 @@
+# Main experiment. PSO parameters follow Table 9 of the paper except n_iter (reduced budget, see README).
+results_dir: results_paper_order
+datasets: [coimbra, wdbc, wpbc]
+classifiers: [ADB, DT, KNN, LDA, LGR, LR, NB, NN, RF, SVM]
+seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]   # one seed = one stratified 80/20 split + one PSO run
+seeds_by_classifier:    # expensive classifiers get fewer runs (>= 6 needed for the Wilcoxon test)
+  RF: [0, 1, 2, 3, 4, 5]
+  ADB: [0, 1, 2, 3, 4, 5]
+  NN: [0, 1, 2, 3, 4, 5]
+n_jobs: 2
+
+preprocess:
+  fit_on: all          # paper order: preprocessing before the split (leaky)
+  outliers: iqr        # "iqr" (1.5*IQR -> replaced by mean) or "none"
+  test_size: 0.2
+drop_features:         # optional, per dataset. WPBC 'recurrence_time' is a post-outcome variable.
+  wpbc: []
+
+pso:
+  n_particles: 20      # paper: 20
+  n_iter: 15           # paper: 100 -> use configs/paper_budget.yaml
+  w: 0.9
+  c1: 1.0              # personal (cognitive) coefficient
+  c2: 2.0              # global (social) coefficient
+  vmax: 0.5
+fitness:
+  alpha: 0.7           # weight of training accuracy
+  beta: 0.3            # weight of validation accuracy
+  k: 4                 # 4-fold stratified CV inside the training part
+
+# Deviations from sklearn defaults, only to keep the compute budget feasible (document in report!)
+clf_params:
+  RF: {n_estimators: 10}
+  ADB: {n_estimators: 10}
+  NN: {hidden_layer_sizes: [20], max_iter: 50}
