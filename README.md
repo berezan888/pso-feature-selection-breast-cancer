@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # PSO feature selection for breast cancer diagnosis: replication study
 
 Replication of Kazerani, *Improving Breast Cancer Diagnosis Accuracy by Particle Swarm Optimization
@@ -45,13 +44,8 @@ Methods compared on the **same split and the same evaluation budget**: `all_feat
 8. Positive class: malignant (WDBC), recurrence (WPBC), patient (Coimbra).
 9. Paper tables were typed from the PDF (`paper_results/paper_tables.csv`); verify against the article.
 
-## Authorship, tools and external code
+## Tools
 
 Libraries: scikit-learn, NumPy, pandas, SciPy, matplotlib. The authors of the paper published no code.
-Parts of the code skeleton were drafted with a generative AI assistant (Claude); the team reviewed,
-tested and is responsible for it. *(Fill in who did what.)*
 
 Educational project, not for clinical use. Data: UCI Machine Learning Repository.
-=======
-﻿# pso-feature-selection-breast-cancer
->>>>>>> 95c46a22fa57ac53e13a705881d643d886b304dc
